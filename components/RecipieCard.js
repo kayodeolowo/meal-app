@@ -1,14 +1,18 @@
-import { View, Text, FlatList, Image } from 'react-native'
+import { View, Text, FlatList, Image , Pressable} from 'react-native'
 import React from 'react'
 import { colors, recipeList } from '../constant'
 import { FontAwesome } from '@expo/vector-icons'
+import { useNavigation } from '@react-navigation/native'
 
 export default function RecipieCard() {
+    const navigation = useNavigation()
     return (
         <View>
             <FlatList data={recipeList}
                 renderItem={({ item }) => (
-                    <View style={{
+                    <Pressable 
+                    onPress={()=> navigation.navigate("RecipeDetails", {item: item})}
+                    style={{
                         backgroundColor: colors.COLOR_LIGHT,
                         shadowColor: "#000",
                         shadowOffset: { width: 0, height: 4 },
@@ -35,7 +39,7 @@ export default function RecipieCard() {
                                     color={colors.COLOR_PRIMARY} />
                             </View>
                         </View>
-                    </View>
+                    </Pressable>
                 )}
 
                 numColumns={2}

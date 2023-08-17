@@ -15,15 +15,15 @@ export default function RecipieScreenList() {
       <SearchFilter icon="search" placeholder="Search Recipes " />
 
       {/* categories */}
-      <View style={{ marginTop: 22 }}>
+      <View style={{ marginTop: 22  }}>
         <Text style={{ fontSize: 22, fontWeight: "bold" }}> Categories </Text>
         <CategoriesFilter />
       </View>
 
       {/* list */}
-      <View style={{ marginTop: 22 }}>
+      <View style={{ marginTop: 22, flex:1 }}>
         <Text style={{ fontSize: 22, fontWeight: "bold" }}> Popular Recipes </Text>
-        <RecipieCard />
+        <RecipieCard  />
       </View>
 
     </SafeAreaView>
